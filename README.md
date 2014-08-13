@@ -4,12 +4,12 @@ bash-norman
 
 I got tired of organizing webapps over and over again.  I wanted a simple way to spin up instances of *nix servers without worrying about where things should go.
 
-While I have tried to stick with standard directory structures and locations, some of the decisions herein may not fit into your standard of choice.
+While I have attempted adherence with standard directory structures and locations, some of the decisions herein may not fit into your standard of choice.
 
 The target platform is `fedora`.  This should be the same for most `REHL` based OS's; however, it is not guaranteed.
 
 ## Goals
-While these goals would suffice just fine for a single webapp on a system, they allow for multiple webapps to be installed on the same system as well.
+While these would suffice just fine for a single webapp on a system, they allow for multiple webapps to be installed on the same system as well.
 
 * logging
 * safely store ssl certificates and credentials within your repository
@@ -18,11 +18,18 @@ While these goals would suffice just fine for a single webapp on a system, they 
 * run webapps as their own user
 * deployment
 
-## System Requirements
-Support for the following `appliances` shall be supported:
+## Getting Started
+1. `scp bootstrap.bash norman.bash root@myserver:~`
+2. `ssh root@myserver bootstrap.bash`
+
+You should then be able to deploy webapps to `myserver`!  `norman` will use your system package manager to install packages required by the supported appliances.
+
+## Supported appliances
+The following `appliances` are supported:
 
 * nodejs
 * nginx
+* mongo
 
 ## Directories
 * `webapps` (`/usr/share/webapps`) - This is where your webapps go.  Webapp directories are named after the `TLD` of the webapp.  For instance, a webapp for `somefoo.com` would have a directory residing in `/usr/share/webapps/somefoo.com`.
