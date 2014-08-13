@@ -16,7 +16,7 @@ While these would suffice just fine for a single webapp on a system, they allow 
 * system'less configuration
 * init scripts
 * run webapps as their own user
-* deployment
+* scp based deployments
 
 ## Getting Started
 1. `scp bootstrap.bash norman.bash root@myserver:~`
